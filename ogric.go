@@ -240,7 +240,7 @@ func (o *Ogric) Stop() {
 func (o *Ogric) Start() (chan Event, error) {
 	err := o.connect()
 	if err != nil {
-		log.Fatal("can't connect:", err)
+		log.Println("can't connect:", err)
 		return nil, err
 	}
 	evtChan := make(chan Event, 10)
