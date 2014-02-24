@@ -55,6 +55,7 @@ type Ogric struct {
 func NewOgric(nick, user, server string) *Ogric {
 	o := new(Ogric)
 	o.Nick = nick
+	o.Nickcurrent = nick
 	o.user = user
 	o.server = server
 	o.log = log.New(os.Stdout, "", log.LstdFlags)
