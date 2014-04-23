@@ -66,6 +66,7 @@ func (o *Ogric) handleEvent(e Event) {
 	case "NICK":
 		if e.Nick == o.Nick {
 			o.Nickcurrent = e.Message
+			o.Nick = e.Message
 		}
 	case "001":
 		o.Nickcurrent = e.Arguments[0]

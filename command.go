@@ -31,6 +31,12 @@ func (o *Ogric) Noticef(target, format string, a ...interface{}) {
 	o.Notice(target, fmt.Sprintf(format, a...))
 }
 
+//PrivMsg Send message to target
 func (o *Ogric) Privmsg(target, message string) {
 	o.pwrite <- fmt.Sprintf("PRIVMSG %s :%s\r\n", target, message)
+}
+
+//Nick change nick to newNick
+func (o *Ogric) SetNick(newNick string) {
+	o.pwrite <- fmt.Sprintf("NICK %s\r\n", newNick)
 }
