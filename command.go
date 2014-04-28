@@ -40,3 +40,8 @@ func (o *Ogric) Privmsg(target, message string) {
 func (o *Ogric) SetNick(newNick string) {
 	o.pwrite <- fmt.Sprintf("NICK %s\r\n", newNick)
 }
+
+//SendRaw send raw irc command
+func (o *Ogric) SendRaw(command string) {
+	o.sendRaw(command)
+}
